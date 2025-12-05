@@ -110,3 +110,18 @@ battery, distance, and SOS status. Follows struct ViewModel pattern from
 Naming_and_Conventions. No MapKit/CoreLocation yet - pure stub services only.
 
 ================================================================================
+2025-12-06T06:28:00+10:00
+[SOSSpy] feat: (UI/ViewModels) add mock route preview to SOS screen
+
+Files created/modified:
+• SOSSpy/UI/ViewModels/SOSViewModel.swift
+• SOSSpy/UI/Screens/SOSScreen.swift
+
+Summary:
+Added routePlan optional property to SOSViewModel and implemented loadRoutePreview()
+async method that calls routingService.calculateRoute() with mock Bargara destination
+coordinates. Updated SOSScreen to conditionally display route distance and travel time
+when routePlan is available. Screen now calls both updateState() and loadRoutePreview()
+in .task. Uses mock routing service only - no Apple Maps integration yet.
+
+================================================================================
