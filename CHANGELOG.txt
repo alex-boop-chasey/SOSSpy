@@ -78,3 +78,19 @@ All future edits will append entries to this file following ISO date/time format
 with one-line summary and file list per guidance documents.
 
 ================================================================================
+2025-12-06T06:10:00+10:00
+[SOSSpy] feat: (Core/Services) scaffold DistanceFromHomeService protocol + Real + Mock
+
+Files created/modified:
+• SOSSpy/Core/Services/Distance/DistanceFromHomeService.swift
+• SOSSpy/Core/Services/Distance/RealDistanceFromHomeService.swift
+• SOSSpy/Core/Services/Distance/MockDistanceFromHomeService.swift
+
+Summary:
+Scaffolded DistanceFromHomeService protocol with distanceFromHome() async function.
+RealDistanceFromHomeService has temporary stub returning 10.0 (real calculation with
+frozen Bundaberg coordinates comes later). MockDistanceFromHomeService returns
+deterministic Bargara test distance (11.4km). No OS frameworks (CoreLocation/MapKit)
+in this step - pure stubs only. Follows protocol + Real + Mock pattern.
+
+================================================================================
