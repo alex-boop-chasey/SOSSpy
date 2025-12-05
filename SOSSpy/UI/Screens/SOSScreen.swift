@@ -4,24 +4,15 @@
 import SwiftUI
 
 struct SOSScreen: View {
-
     @Bindable var viewModel: SOSViewModel
 
     var body: some View {
-        VStack(spacing: 20) {
+        VStack(spacing: 12) {
             Text("Battery: \(viewModel.batteryPercent)%")
-                .font(.title2)
-
-            Text("Distance from home: \(String(format: "%.1f", viewModel.distanceFromHomeKm)) km")
-                .font(.title2)
-
-            Text(viewModel.isSOS ? "Status: ⚠️ SOS" : "Status: Safe")
-                .font(.title)
-                .foregroundStyle(viewModel.isSOS ? .red : .green)
+            Text("Distance from home: \(viewModel.distanceFromHomeKm, specifier: "%.1f") km")
+            Text(viewModel.isSOS ? "⚠️ SOS" : "Safe")
         }
         .padding()
-        .task {
-            await viewModel.updateState()
-        }
+        .task { await viewModel.updateState() }
     }
 }

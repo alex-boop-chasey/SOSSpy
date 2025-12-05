@@ -1,10 +1,8 @@
 // SOSViewModel.swift
 // ViewModel for Battery SOS screen
 
-import SwiftUI
-
 @Observable
-final class SOSViewModel {
+struct SOSViewModel {
 
     // MARK: - Services
 
