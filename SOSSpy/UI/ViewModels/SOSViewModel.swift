@@ -1,6 +1,8 @@
 // SOSViewModel.swift
 // ViewModel for Battery SOS screen
 
+import Observation
+
 @Observable
 struct SOSViewModel {
 
