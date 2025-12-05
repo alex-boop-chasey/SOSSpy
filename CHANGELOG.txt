@@ -94,3 +94,19 @@ deterministic Bargara test distance (11.4km). No OS frameworks (CoreLocation/Map
 in this step - pure stubs only. Follows protocol + Real + Mock pattern.
 
 ================================================================================
+2025-12-06T06:20:00+10:00
+[SOSSpy] feat: (UI/ViewModels) add SOSViewModel + minimal SOSScreen scaffold
+
+Files created/modified:
+• SOSSpy/UI/ViewModels/SOSViewModel.swift
+• SOSSpy/UI/Screens/SOSScreen.swift
+
+Summary:
+Created @Observable struct SOSViewModel with service injection (EVRoutingService,
+DistanceFromHomeService). Exposes batteryPercent, currentLocation, distanceFromHomeKm,
+and isSOS properties. Implements async updateState() that calls distanceService and
+BatterySOSDetector engine. Created minimal SOSScreen with three Text rows showing
+battery, distance, and SOS status. Follows struct ViewModel pattern from
+Naming_and_Conventions. No MapKit/CoreLocation yet - pure stub services only.
+
+================================================================================
