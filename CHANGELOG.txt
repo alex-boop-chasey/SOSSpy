@@ -66,3 +66,15 @@ Bargara short route values (11.4km, 20min). All three files follow protocol +
 Real + Mock pattern from Naming_and_Conventions.txt.
 
 ================================================================================
+2025-12-06T06:04:00+10:00
+[SOSSpy] chore: (Project) add CHANGELOG with backfilled history
+
+Files created/modified:
+• CHANGELOG.txt
+
+Summary:
+Created CHANGELOG.txt and backfilled all previous work from commit history.
+All future edits will append entries to this file following ISO date/time format
+with one-line summary and file list per guidance documents.
+
+================================================================================
