@@ -1,0 +1,35 @@
+# docs/XcodeBuildMCP_Recipes.md
+Cheatsheet of the ONLY XcodeBuildMCP commands we actually use.
+
+2. SIMULATOR CONTROL
+# Build + run with full console logs (real workhorse)
+mcp xcodebuildmcp.build_run_sim project=<path> scheme=<name> udid=<simUDID> --logs
+
+6. SIMULATOR CONFIG
+# Force dark mode (required for price-drop notification testing)
+mcp xcodebuildmcp.set_sim_appearance udid=<simUDID> appearance=dark
+
+8. SWIFT PACKAGE MANAGEMENT
+# Test CheapSlotEngine prototype
+mcp xcodebuildmcp.swift_package_test path=<folder> --test-target=CheapSlotEngineTests
+
+10. THE SIX COMMANDS WE USE 90% OF THE TIME
+1) mcp xcodebuildmcp.build_run_sim --logs
+2) mcp xcodebuildmcp.screenshot
+3) mcp xcodebuildmcp.set_sim_location
+4) mcp xcodebuildmcp.test_sim
+5) mcp xcodebuildmcp.stop_app_sim
+6) mcp xcodebuildmcp.set_sim_appearance appearance=dark
+
+11. LOG CAPTURE (mandatory for Battery SOS verification)
+mcp xcodebuildmcp.start_sim_log_cap udid=<simUDID> output=~/Desktop/sos_debug.log
+mcp xcodebuildmcp.stop_sim_log_cap udid=<simUDID>
+
+12. SIMULATOR RESET (use immediately when state is corrupted)
+# Erase all simulator data — fixes stuck notifications, battery %, location, widgets, routing
+mcp xcodebuildmcp.erase_sims udid=<simUDID>
+# Then reboot fresh
+mcp xcodebuildmcp.boot_sim udid=<simUDID>
+mcp xcodebuildmcp.open_sim udid=<simUDID>
+
+END OF DOCUMENT — frozen forever.

@@ -1,0 +1,81 @@
+# docs/Prototype_Snapshot.md
+# PROTOTYPE SNAPSHOT — ACTIVATED 2025-12-04
+A frozen snapshot of the CURRENT prototype at the moment it was activated.
+This file is updated ONLY when transitioning to the next prototype.
+
+====================================================
+1. PROTOTYPE NAME
+====================================================
+CURRENT_PROTOTYPE: [SOSSpy]          # ← ONLY THIS LINE EVER CHANGES
+# Allowed values (copy/paste only): [PriceSpy] | [SOSSpy] | [CheapSlotEngine] | [Final Monorepo]
+
+====================================================
+2. PURPOSE OF THIS PROTOTYPE
+====================================================
+PURPOSE:
+• Validate Battery SOS detection in complete isolation
+• Prove Apple EV Routing + Tesla Supercharger fallback works
+• Demonstrate deterministic location + battery injection via MCP
+• Ensure the canonical test sequence works end-to-end
+
+====================================================
+3. WHAT THIS PROTOTYPE MUST SHIP
+====================================================
+REQUIRED_OUTPUTS:
+• BatterySOSDetector pure engine + full unit tests
+• RealEVRoutingService + MockEVRoutingService with Tesla fallback
+• Minimal SwiftUI screen showing SOS state + route preview
+• All tests pass using Test_Locations_and_Scenarios.md
+• Working simulator demo using canonical test sequence
+• Deterministic mock + real behaviour matching Mock_Strategy.md
+
+====================================================
+4. WHAT THIS PROTOTYPE EXPLICITLY DOES NOT INCLUDE
+====================================================
+EXCLUDED:
+• Wholesale price fetching or notifications
+• Calendar sync
+• Charger scout
+• Gamification
+• WidgetExtension / Live Activities
+• Any persistence (beyond our minimal UserDefaults wrapper)
+• Any feature outside the 8 defined in masterplan.txt
+
+====================================================
+5. ARCHITECTURE RULES IN FORCE
+====================================================
+ARCH_RULES:
+• Core/ only — pure logic, no SwiftUI
+• UI/ uses @Observable ViewModels only
+• No backend, no Combine, no UIKit
+• No persistence except UserDefaults wrapper
+• Services = protocol + Real + Mock (same folder)
+• Engines = pure functions (no async, no timers, no OS types)
+• WidgetExtension allowed only for visual testing
+• No @MainActor in Core types
+• Strict adherence to Forbidden_List.txt
+
+====================================================
+6. COMPLETION CRITERIA
+====================================================
+COMPLETION_CRITERIA:
+• All unit + UI tests pass on both device and simulator
+• Manual verification using Urangan Pier long-distance scenario
+• Simulator reset (Section 12 in MCP Recipes) does NOT change behaviour
+• EV routing mock + real parity validated using Mock_Strategy.md
+• Commit history follows Commit_Message_Playbook.txt exactly
+• No scope violations in TODO.md or during LLM sessions
+
+====================================================
+7. SNAPSHOT OF WHAT WAS ALREADY WORKING
+====================================================
+INHERITED_FROM_PREVIOUS:
+• PriceSpy prototype complete: WholesalePriceService + mock + 48h parsing
+• Architecture_in_One_Page.md fully implemented
+• All frozen docs (Forbidden_List, Naming, XcodeBuildMCP_Recipes, etc.) live and validated
+• Deterministic test coordinate system established
+• Canonical commit style and branching rules enforced
+
+====================================================
+END OF DOCUMENT — frozen until the next prototype.
+Do NOT edit during active development.

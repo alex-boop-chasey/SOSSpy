@@ -1,0 +1,53 @@
+# docs/Forbidden_List.txt
+The red-line constraints for ChargeTimerPro. Absolute. Any violation = instant reject.
+
+====================================================
+1. ARCHITECTURE & CODE STRUCTURE
+====================================================
+❌ No Features/ folder
+❌ No managers, singletons, controllers, coordinators
+❌ No UIKit, Storyboards, AutoLayout
+❌ No Combine or any reactive framework
+❌ No SwiftData, CoreData, Realm, or any persistence beyond a UserDefaults wrapper
+❌ No backend, CloudKit, Firebase — ever
+❌ No third-party dependencies outside Apple frameworks
+❌ No @EnvironmentObject, @Environment, @AppStorage, @SceneStorage
+❌ No @MainActor on Core types (allowed ONLY in UI + ViewModels)
+❌ No business logic in ViewModels
+❌ No async/timers inside Core/Engine/
+❌ No global state or static caches
+❌ No type-erased “any <Protocol>” returns in async functions
+
+====================================================
+2. BUILD & PROJECT SETUP
+====================================================
+❌ No manual .xcodeproj or .xcworkspace files (xcodegen ONLY)
+❌ No running anything outside Claude Code CLI + XcodeBuildMCP
+
+====================================================
+3. APP BEHAVIOUR & SCOPE
+====================================================
+❌ No map frameworks other than Apple Maps
+❌ No user accounts or stored personal data
+❌ No analytics, crash reporting, or remote logging
+❌ No push notifications (local only)
+❌ No ML models
+❌ No in-app purchase or subscription code until the final monorepo
+❌ iOS only — no macOS/visionOS/watchOS targets
+❌ No extension targets except WidgetExtension
+
+====================================================
+4. PERFORMANCE & SAFETY
+====================================================
+❌ No blocking the main thread
+❌ No timers faster than 1/sec
+❌ No continuous polling
+
+====================================================
+5. PROTOTYPE RULES
+====================================================
+❌ No early merging — prototypes remain 100% isolated until CheapSlotEngine is complete
+❌ No feature creep beyond the exact 8 in masterplan.txt
+
+====================================================
+END OF DOCUMENT — frozen forever.

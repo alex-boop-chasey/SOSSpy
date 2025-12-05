@@ -1,0 +1,40 @@
+# docs/Mock_Strategy.md
+Exact rules for all mocks. Deterministic. Static. Frozen.
+
+1. PURPOSE … (unchanged)
+
+2. GLOBAL MOCK RULES … (unchanged)
+
+3. MOCK DATA FILES (REAL FILENAMES — DO NOT RENAME)
+Resources/MockData/
+    mock_wholesale_prices_48h.json
+    mock_ev_route_oslo_bergen.json
+    mock_chargers_bundaberg.json
+    mock_calendar_week.json
+    # NO JSON for BatterySOSDetector — it is pure Core/Engine
+    # BatterySOSDetector is tested exclusively via unit tests; it has no Real/Mock service implementations.
+
+4. MOCK RULES PER FEATURE … (unchanged)
+
+5. ALLOWED MOCK IMPLEMENTATIONS (BOTH VALID) … (unchanged)
+
+6. WHEN MOCKS ARE USED … (unchanged)
+
+7. MOCK VALIDATION RULE (NON-NEGOTIABLE)
+------------------------------------------------
+Whenever a Real<Domain>Service model is changed:
+
+1. Update the Real service to return the new model shape.
+2. Regenerate or update the Mock service to return IDENTICAL model shapes.
+3. If JSON is used:
+   • Create a minimal JSON sample matching the new model structure
+   • Ensure every field in the Real model exists in the mock JSON
+   • Remove fields not represented in the model
+4. Commit Real + Mock changes together as one atomic commit.
+
+Rules:
+• We validate MODEL STRUCTURE, not raw API payloads.
+• Mock JSON must remain small, deterministic, and human-edited.
+• Hand-editing mocks is allowed ONLY to match model shape — never guess.
+
+END OF DOCUMENT — frozen forever.

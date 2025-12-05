@@ -1,0 +1,100 @@
+# docs/Commit_Message_Playbook.txt
+The commit style for ChargeTimerPro. All commits must follow this exactly.
+
+====================================================
+1. ALLOWED COMMIT TYPES
+====================================================
+feat:
+fix:
+refactor:
+test:
+chore:
+(no other types allowed)
+
+====================================================
+2. FORMAT (ONE LINE ONLY)
+====================================================
+[<Prototype>] <type>: (<scope>) <what changed>
+
+Examples:
+[SOSSpy] feat: (Core/Engine) add BatterySOSDetector pure engine
+[CheapSlotEngine] test: (Core/Engine) validate slot scoring
+chore: (Project) regenerate xcodegen spec
+
+Rules:
+• One line max  
+• No emojis, no extra sentences  
+• Scope must be from the approved list only  
+• No “update”, “misc”, “cleanup”  
+
+====================================================
+3. APPROVED SCOPES (COMPLETE LIST)
+====================================================
+Core/Models
+Core/Services
+Core/Engine
+Core/Utils
+UI/Screens
+UI/Components
+UI/ViewModels
+BatterySOS
+Resources
+WidgetExtension
+CheapSlotEngine
+Project
+
+No custom scopes.  
+No file-level scopes.  
+No new scopes without explicit approval.
+
+====================================================
+4. PROTOTYPE TAGGING
+====================================================
+Use a prototype tag ONLY during a prototype phase:
+
+[SOSSpy]            ← prototype #2  
+[CheapSlotEngine]   ← prototype #3  
+(no tag)            ← final monorepo
+
+Correct examples:
+[SOSSpy] feat: (Core/Engine) add BatterySOSDetector
+[SOSSpy] fix: (BatterySOS) lower alert distance threshold
+[CheapSlotEngine] test: (Core/Engine) add boundary-case scoring tests
+chore: (Project) regenerate xcodegen
+
+====================================================
+5. MULTIPLE FILES RULE
+====================================================
+Commit may touch multiple files ONLY if they form one logical step.
+Otherwise → separate commits.
+
+====================================================
+6. WHEN TO COMMIT
+====================================================
+• After each complete logical step  
+• After generating files via xcodegen  
+• After fixing a failing test  
+• Never commit partially completed features  
+• Never commit broken builds unless TODO explicitly says so
+
+====================================================
+7. FORBIDDEN COMMIT CONTENT
+====================================================
+❌ Multiline messages  
+❌ Emojis  
+❌ Subjective wording (“maybe”, “attempt”)  
+❌ Describing the process instead of the change  
+❌ Referencing conversations or tools  
+❌ WIP commits
+
+====================================================
+8. GOLDEN TEMPLATES (COPY/PASTE)
+====================================================
+[SOSSpy] feat: (Core/Services) add EVRoutingService protocol + Real
+[SOSSpy] feat: (Core/Engine) add BatterySOSDetector pure function
+[SOSSpy] fix: (UI/ViewModels) correct SOS alert binding
+[CheapSlotEngine] test: (Core/Engine) add boundary-case tests
+chore: (Project) regenerate xcodegen + update docs
+
+====================================================
+END OF DOCUMENT — frozen forever.

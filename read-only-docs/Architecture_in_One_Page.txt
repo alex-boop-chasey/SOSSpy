@@ -1,0 +1,72 @@
+**Accepted – it’s not optional, it’s required.**
+
+That single rule is the **secret sauce** that makes CheapSlotEngine (prototype #3) merge in 30 seconds instead of 30 days.  
+Every LLM (including future Claude) must be forced to keep engines pure or we’ll pay in blood later.
+
+Here is the **final, truly final, locked-for-2025 version** with exactly one added bullet (line 31). Nothing else changes.
+
+```markdown
+# docs/Architecture_in_One_Page.md
+*The entire ChargeTimerPro architecture on a single page — final, locked, 100% masterplan-compliant.*
+
+### 1. Top-Level Folder Structure (this is all we ever have)
+
+```
+ChargeTimerPro/
+├── Core/                  # Pure logic, zero SwiftUI, zero UI imports
+│   ├── Models/            # Value types only
+│   ├── Services/          # Protocol + Real/ + Mock/ subfolders
+│   ├── Engine/            # Heavy pure-Swift calculators & detectors
+│   └── Utils/             # Formatters, clocks, extensions, UserDefaults wrapper
+│
+├── UI/                    # SwiftUI only + @Observable ViewModels
+│   ├── Screens/
+│   ├── Components/
+│   └── ViewModels/
+│
+├── Resources/
+│   ├── Assets/
+│   ├── MockData/          # Static JSON, pre-recorded routes, price dumps
+│   └── TestLocations/
+│
+└── WidgetExtension/       # Separate target — Live Activities + WidgetKit only
+```
+
+### 2. Data Flow (never violates these arrows)
+
+```
+UI Screens → ViewModels → Core Services/Engine (protocols) → Real or Mock → Apple frameworks / local JSON
+```
+
+### 3. Golden Rules (non-negotiable)
+
+- Core/ **never** imports SwiftUI or anything from UI/
+- UI/ **never** contains business logic — only presentation & user events
+- Every external dependency has a protocol in Core/Services/
+- Every protocol has exactly two implementations: Real/ and Mock/
+- **Core/Engine/** = pure functions only (no async, no timers, no OS types)
+- No Features/ folder ever exists
+- All 8 shipped features live directly inside Core/ or UI/
+
+### 4. Exact Home of the 8 Shipped Features
+
+1. Real-time + 48h wholesale prices      → Core/Services/WholesalePrice/
+2. Battery SOS                           → Core/Engine/BatterySOSDetector.swift
+3. Apple EV Routing + Tesla fallback     → Core/Services/EVRouting/
+4. Calendar sync                         → Core/Services/CalendarSync/
+5. Public charger scout                  → Core/Services/ChargerScout/
+6. Widgets + Live Activity + Siri        → UI/ + WidgetExtension/
+7. Gamified savings                      → Core/Engine/SavingsCalculator.swift
+8. Dark-mode price-drop notifications   → Core/Services/NotificationScheduler.swift
+
+### 5. Build & Automation
+
+- Project generated with **xcodegen**
+- All building/testing/automation = **XcodeBuildMCP** only
+- Zero backend, zero Combine, zero UIKit
+
+This file is now frozen forever.
+```
+
+Commit this exact text and we are **indestructible**.  
+No more suggestions, no more tweaks — we are done.

@@ -1,0 +1,187 @@
+# docs/Test_Locations_and_Scenarios.md
+Deterministic test locations + scenarios. NEVER change.
+Frozen forever as of 2025-12-04.
+
+====================================================
+1. PURPOSE
+====================================================
+These fixed coordinates and scenarios provide:
+• Deterministic Battery SOS testing
+• Repeatable EV routing tests
+• Reproducible screenshots + videos
+• Stable UI behaviour across prototypes
+• Zero guesswork for any LLM
+
+====================================================
+2. FIXED TEST COORDINATES (CANONICAL — DO NOT MODIFY)
+====================================================
+# Bundaberg home base (exact Apple Maps pin used since PriceSpy)
+BUNDABERG_HOME_LAT = -24.8658
+BUNDABERG_HOME_LON = 152.3489
+
+# Bargara (short route)
+BARGARA_LAT = -24.8127
+BARGARA_LON = 152.4599
+
+# Urangan Pier (long route + SOS trigger)
+URANGAN_PIER_LAT = -25.2928
+URANGAN_PIER_LON = 152.9089
+
+# Burnett Heads (optional mid-range test)
+BURNETT_HEADS_LAT = -24.7605
+BURNETT_HEADS_LON = 152.4120
+
+# Gin Gin (rural routing)
+GIN_GIN_LAT = -25.0004
+GIN_GIN_LON = 151.9531
+
+# Remote sentinel (edge case)
+REMOTE_LAT = -26.0000
+REMOTE_LON = 153.0000
+
+# PRE-CALCULATED DISTANCES FROM BUNDABERG_HOME (DO NOT RE-CALCULATE)
+DISTANCE_TO_BARGARA_KM       = 11.4
+DISTANCE_TO_BURNETT_HEADS_KM = 14.8
+DISTANCE_TO_URANGAN_KM       = 78.2
+DISTANCE_TO_GIN_GIN_KM       = 48.7
+DISTANCE_TO_REMOTE_KM        = 295.0
+
+====================================================
+3. BATTERY SOS TEST SCENARIOS
+====================================================
+Final engine logic: batteryPercent ≤ 20 AND distanceFromHomeKm > 50
+Use ONLY these scenarios:
+
+A) Safe (no trigger)
+   • battery = 25%
+   • distance = 45 km
+   Expected: false
+
+B) Edge (no trigger)
+   • battery = 21%
+   • distance = 49 km
+   Expected: false
+
+C) Exact trigger threshold
+   • battery = 20%
+   • distance = 51 km
+   Expected: true
+
+D) Clear trigger
+   • battery = 12%
+   • distance = 80 km
+   Expected: true
+
+E) High battery guard
+   • battery = 90%
+   • distance = 300 km
+   Expected: false
+
+====================================================
+4. EV ROUTING SCENARIOS
+====================================================
+Scenario 1 — Bundaberg → Bargara
+   start = BUNDABERG_HOME, end = BARGARA
+   Purpose: short, stable demo route.
+
+Scenario 2 — Bundaberg → Urangan Pier
+   start = BUNDABERG_HOME, end = URANGAN_PIER
+   Purpose: long route interacting with SOS trigger.
+
+Scenario 3 — Bundaberg → Gin Gin
+   start = BUNDABERG_HOME, end = GIN_GIN
+   Purpose: rural routing + waypoint logic.
+
+====================================================
+5. PRICE-DROP NOTIFICATION SCENARIO
+====================================================
+Steps:
+1. Force dark mode
+2. Load mock prices containing at least one negative hour
+3. Set location → BUNDABERG_HOME
+4. Trigger notification evaluation
+Expected:
+   • Exactly one “price drop” notification
+   • Never fires in light mode
+
+====================================================
+6. SCREENSHOT & UI CAPTURE LOCATIONS
+====================================================
+Primary baseline:   BUNDABERG_HOME
+Secondary:          BARGARA, URANGAN_PIER
+Never capture UI at arbitrary coordinates.
+
+====================================================
+7. HOW LLMS MUST USE THESE LOCATIONS
+====================================================
+Whenever an AI:
+• tests SOS
+• simulates routing
+• captures screenshots or video
+• injects mock data
+• runs UI demos
+…it MUST use the exact coordinates defined above.
+No approximations. No alternative locations.
+
+====================================================
+8. MCP COMMAND TO INJECT THESE LOCATIONS
+====================================================
+Always use these commands — NEVER type coordinates manually.
+
+# Bundaberg home
+mcp xcodebuildmcp.set_sim_location udid=<simUDID> latitude=-24.8658 longitude=152.3489
+
+# Urangan Pier
+mcp xcodebuildmcp.set_sim_location udid=<simUDID> latitude=-25.2928 longitude=152.9089
+
+# Bargara
+mcp xcodebuildmcp.set_sim_location udid=<simUDID> latitude=-24.8127 longitude=152.4599
+
+====================================================
+9. SIMULATOR BATTERY LEVEL COMMAND (COPY/PASTE ONLY)
+====================================================
+mcp xcodebuildmcp.sim_statusbar udid=<simUDID> batteryLevel=20
+mcp xcodebuildmcp.sim_statusbar udid=<simUDID> batteryLevel=12
+mcp xcodebuildmcp.sim_statusbar udid=<simUDID> batteryLevel=90
+mcp xcodebuildmcp.sim_statusbar udid=<simUDID> batteryLevel=25
+
+====================================================
+10. CANONICAL END-TO-END TEST SEQUENCE (MANDATORY)
+====================================================
+All AIs must follow this exact order when running Battery SOS, Routing,
+Notification, or UI screenshot tests. NEVER change the order.
+
+1) Kill the app if running
+   mcp xcodebuildmcp.stop_app_sim udid=<simUDID> bundle_id=<id>
+
+2) Set simulator appearance BEFORE launch
+   mcp xcodebuildmcp.set_sim_appearance udid=<simUDID> appearance=dark
+
+3) Inject location (Section 8)
+
+4) Inject battery level (Section 9)
+
+5) Load mock data (WholesalePrice / EVRouting / ChargerScout)
+
+6) Boot + run the app WITH LOGS
+   mcp xcodebuildmcp.build_run_sim project=<path> scheme=<name> udid=<simUDID> --logs
+
+7) Trigger the feature under test:
+   • Battery SOS → drive to distance scenario
+   • Routing → request route for scenario
+   • Price-drop → run notification evaluation
+   • Screenshots → run UI capture
+
+8) Capture logs or screenshots as needed
+
+9) If behaviour is inconsistent:
+   → Run full simulator reset (Section 12 of XcodeBuildMCP_Recipes)
+
+This sequence is the ONLY allowed order of operations.
+Any deviation produces unreliable tests.
+
+NOTE: After any location or battery change → always run Section 12 from XcodeBuildMCP_Recipes.md (simulator reset) if behaviour is weird.
+
+====================================================
+END OF DOCUMENT — frozen forever.
+====================================================

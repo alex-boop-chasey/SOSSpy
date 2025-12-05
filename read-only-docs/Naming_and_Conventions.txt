@@ -1,0 +1,43 @@
+Naming_and_Conventions
+
+The one-page naming + style bible for ChargeTimerPro. All AIs must follow this exactly.
+
+1. FILE & FOLDER NAMING
+   • Files use UpperCamelCase.swift
+   • Tests use <Name>Tests.swift
+
+2. PROTOCOLS + SERVICES
+   • Core/Services/<Domain>/                  ← folder per domain
+   • <Domain>Service.swift                    ← protocol
+   • Real<Domain>Service.swift
+   • Mock<Domain>Service.swift
+   (all three files live in the same folder)
+
+3. MODELS
+   • Value types only → PricePoint, BatteryState, RoutePlan
+
+4. CORE ENGINE RULES (CRITICAL)
+   • Pure functions only (no async, no OS types)
+   • Deterministic, no side effects
+
+5. VIEWMODELS
+   • UI/ViewModels/<ScreenName>ViewModel.swift
+   • @Observable only
+   • Calls Core Services or pure Core/Engine types (BatterySOSDetector, SavingsCalculator, future CheapSlotEngine)
+   • Never contains business logic
+
+6. SCREENS + COMPONENTS
+   • UI/Screens/<Name>Screen.swift
+   • UI/Components/<Name>Component.swift
+
+7. RESOURCE NAMING
+   • mock_prices.json, sample_route.json
+
+8. GENERAL SWIFT STYLE
+   • async/await only in Real services
+   • One type per file
+   • // MARK: - groupings
+   • All async functions must return concrete types (never “any”)
+   • Never // TODO except in docs/TODO.md
+
+END OF DOCUMENT — frozen forever

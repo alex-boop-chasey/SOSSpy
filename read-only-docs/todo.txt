@@ -1,0 +1,42 @@
+# docs/TODO.md
+The ONLY document that changes daily.
+All other docs are frozen.
+
+CURRENT PROTOTYPE: [SOSSpy]          # ← ONLY THIS LINE EVER CHANGES — must be exactly one of the four allowed tags
+# Allowed values (copy/paste only): [PriceSpy] | [SOSSpy] | [CheapSlotEngine] | [Final Monorepo]
+
+NEXT ACTION (ONE ATOMIC STEP)
+# Exactly one task. One commit. Never multiple.
+NEXT_STEP:
+______________________________________________
+
+AFTER THAT (IMMEDIATE FOLLOW-UP STEPS)
+# 2–4 short, strictly ordered steps.
+1. ___________________________________________
+2. ___________________________________________
+3. ___________________________________________
+4. ___________________________________________
+
+BLOCKED / WAITING ON
+• ____________________________________________
+• ____________________________________________
+
+OUT OF SCOPE (PROTOTYPE GUARDRAIL)
+• ____________________________________________
+• ____________________________________________
+
+DONE (ROLLING LOG)
+# Keep only the last 10 entries
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+• 
+
+END OF DOCUMENT — this file is allowed to change.
+All other docs remain frozen.

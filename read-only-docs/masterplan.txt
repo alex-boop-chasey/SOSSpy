@@ -1,0 +1,50 @@
+CHARGE TIMER PRO — 2025 MASTER PLAN (v2 — FINAL)
+
+We ship exactly 8 viral features, zero backend, one subscription.
+
+Claude Commands (frozen)
+• urls → list raw GitHub URLs for every file in the current project (one per line)
+• c/p → commit + push current changes to main
+• c/p feature → create feature branch → commit → push
+• build/run → mcp xcodebuildmcp.build_run_sim --logs (primary build command)
+
+Prototype Strategy — ONLY 3 throw-away apps
+1. PriceSpy → DONE
+2. SOSSpy → CURRENT (Battery SOS + Apple EV Routing + Tesla fallback)
+3. CheapSlotEngine → next (pure library)
+→ Then merge into final ChargeTimerPro monorepo
+
+8 Features We Actually Ship
+1. Real-time + 48h wholesale prices (free APIs)
+2. Battery SOS (low % + far from home)
+3. Apple EV Routing + Tesla fallback
+4. Calendar sync
+5. Public charger scout (OpenChargeMap)
+6. Home screen + Widgets + Live Activity + Siri
+7. Gamified savings (kWh → coffees + screenshots)
+8. Dark-mode-only price-drop local notifications
+
+Tech Stack (non-negotiable)
+• Claude Code CLI = coder
+• XcodeBuildMCP = builder/tester
+• Xcode 26 + Swift 6 + SwiftUI + xcodegen
+• VS Code = docs only
+• No backend, no Combine, no UIKit, no extra MCP servers
+
+Folder Rules
+Core/ = never touches UI
+All services = protocol + real + mock
+UI/ = only SwiftUI + @Observable ViewModels
+
+Entitlements Day 1
+Background fetch | Always Location | EV Routing | App Intents | Live Activities | WidgetKit
+
+Claude Rules (never break)
+• When I say “next” → one complete logical step (xcodegen + files + commit)
+• All terminal blocks start with `cd`
+• Use XcodeBuildMCP aggressively
+• Commit style: feat: / fix: / refactor:
+• Never split a logical step
+• Never overbuild prototypes
+
+Current stage: Building SOSSpy (prototype #2)
