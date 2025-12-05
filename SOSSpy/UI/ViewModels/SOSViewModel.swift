@@ -17,6 +17,7 @@ struct SOSViewModel {
     var currentLocation: (Double, Double) = (-24.8658, 152.3489)
     var distanceFromHomeKm: Double = 0
     var isSOS: Bool = false
+    var routePlan: RoutePlan? = nil
 
     // MARK: - Initialization
 
@@ -46,6 +47,18 @@ struct SOSViewModel {
             // Handle error silently for now
             distanceFromHomeKm = 0
             isSOS = false
+        }
+    }
+
+    func loadRoutePreview() async {
+        do {
+            let plan = try await routingService.calculateRoute(
+                from: currentLocation,
+                to: (-24.8127, 152.4599) // Bargara mock destination
+            )
+            routePlan = plan
+        } catch {
+            routePlan = nil
         }
     }
 }

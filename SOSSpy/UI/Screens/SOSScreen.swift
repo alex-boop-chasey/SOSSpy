@@ -11,8 +11,16 @@ struct SOSScreen: View {
             Text("Battery: \(viewModel.batteryPercent)%")
             Text("Distance from home: \(viewModel.distanceFromHomeKm, specifier: "%.1f") km")
             Text(viewModel.isSOS ? "⚠️ SOS" : "Safe")
+
+            if let plan = viewModel.routePlan {
+                Text("Route distance: \(plan.distanceKm, specifier: "%.1f") km")
+                Text("Travel time: \(plan.expectedTravelTimeMinutes) min")
+            }
         }
         .padding()
-        .task { await viewModel.updateState() }
+        .task {
+            await viewModel.updateState()
+            await viewModel.loadRoutePreview()
+        }
     }
 }
