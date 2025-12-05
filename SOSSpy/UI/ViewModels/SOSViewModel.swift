@@ -4,7 +4,8 @@
 import Observation
 
 @Observable
-struct SOSViewModel {
+@MainActor
+final class SOSViewModel {
 
     // MARK: - Services
 

@@ -8,9 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		0269E609BDE71271BE8C521C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A14ADF0EA10E6F934744CD /* ContentView.swift */; };
+		0EF0A95997E9CE75A7949321 /* DistanceFromHomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6794F481C8A3C91DA23E4C6 /* DistanceFromHomeService.swift */; };
+		0F6DC563E216E3413E5AD5CD /* RealDistanceFromHomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18B1DF1F20235C571772A86 /* RealDistanceFromHomeService.swift */; };
+		148C001E866CBDCAEDA7DE39 /* SOSScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98942B950FCF88E1905EF6D9 /* SOSScreen.swift */; };
 		485E3C039C96D9471018D1CF /* SOSSpyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6191DBE42312E7484CD755CA /* SOSSpyApp.swift */; };
+		622B8940FF258E5EC074672E /* RealEVRoutingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 467C60F7F3CCB9B793DD6BC7 /* RealEVRoutingService.swift */; };
 		9B4FA0A2A78954D17FC1302D /* BatterySOSDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBE26B77E5D4D1C90B741D9 /* BatterySOSDetector.swift */; };
 		9E5E93C03B62606B23234998 /* BatterySOSDetectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939C969A782A73D1E4B6C906 /* BatterySOSDetectorTests.swift */; };
+		D63549CCC9F467CE782CA123 /* MockDistanceFromHomeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDF24C1A2A21EB00860DA7C /* MockDistanceFromHomeService.swift */; };
+		EC0C1AD290D003BC78E65B44 /* MockEVRoutingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF5151459D1DCC69C19BBC1 /* MockEVRoutingService.swift */; };
+		F17B4A3B3B08E318FFD31460 /* SOSViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B825C55DC5C83AE82CDE725 /* SOSViewModel.swift */; };
+		FCC2A91C309690D37BD0F3B3 /* EVRoutingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05EC5798675BC7A77AEFF779 /* EVRoutingService.swift */; };
 		FE31E0A2AEFDF579B109B6E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CF4091F4406DD8C2F30F79C /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -25,13 +33,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		05EC5798675BC7A77AEFF779 /* EVRoutingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EVRoutingService.swift; sourceTree = "<group>"; };
+		0B825C55DC5C83AE82CDE725 /* SOSViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSViewModel.swift; sourceTree = "<group>"; };
 		1424EF2098BCA97E12BAB02A /* SOSSpy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SOSSpy.entitlements; sourceTree = "<group>"; };
 		462D1C01E2E5FEBE0CADD5A4 /* SOSSpy.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SOSSpy.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		467C60F7F3CCB9B793DD6BC7 /* RealEVRoutingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealEVRoutingService.swift; sourceTree = "<group>"; };
 		6191DBE42312E7484CD755CA /* SOSSpyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSSpyApp.swift; sourceTree = "<group>"; };
+		7BF5151459D1DCC69C19BBC1 /* MockEVRoutingService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockEVRoutingService.swift; sourceTree = "<group>"; };
+		7DDF24C1A2A21EB00860DA7C /* MockDistanceFromHomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDistanceFromHomeService.swift; sourceTree = "<group>"; };
 		939C969A782A73D1E4B6C906 /* BatterySOSDetectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatterySOSDetectorTests.swift; sourceTree = "<group>"; };
+		98942B950FCF88E1905EF6D9 /* SOSScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSScreen.swift; sourceTree = "<group>"; };
 		98A14ADF0EA10E6F934744CD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9CF4091F4406DD8C2F30F79C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C18B1DF1F20235C571772A86 /* RealDistanceFromHomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealDistanceFromHomeService.swift; sourceTree = "<group>"; };
 		C97F472A6AC29DC647BCAEF4 /* SOSSpyTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SOSSpyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6794F481C8A3C91DA23E4C6 /* DistanceFromHomeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DistanceFromHomeService.swift; sourceTree = "<group>"; };
 		EBBE26B77E5D4D1C90B741D9 /* BatterySOSDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatterySOSDetector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -43,6 +59,25 @@
 				C97F472A6AC29DC647BCAEF4 /* SOSSpyTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		348FD99C1B20293D0A0641D7 /* Distance */ = {
+			isa = PBXGroup;
+			children = (
+				D6794F481C8A3C91DA23E4C6 /* DistanceFromHomeService.swift */,
+				7DDF24C1A2A21EB00860DA7C /* MockDistanceFromHomeService.swift */,
+				C18B1DF1F20235C571772A86 /* RealDistanceFromHomeService.swift */,
+			);
+			path = Distance;
+			sourceTree = "<group>";
+		};
+		48793713CC8460AA197D2206 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				586E78D2A983D245E30D6FEF /* Screens */,
+				5ACC4F2259A039699E1911E4 /* ViewModels */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 		4899BFF2958FA21A81580AC7 /* Engine */ = {
@@ -61,12 +96,38 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		586E78D2A983D245E30D6FEF /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				98942B950FCF88E1905EF6D9 /* SOSScreen.swift */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		5ACC4F2259A039699E1911E4 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				0B825C55DC5C83AE82CDE725 /* SOSViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		770429A315CEF71EE49D8B06 /* SOSSpyTests */ = {
 			isa = PBXGroup;
 			children = (
 				FF14EE1AA8F984A904DFAFD1 /* Core */,
 			);
 			path = SOSSpyTests;
+			sourceTree = "<group>";
+		};
+		856C0DA92A173F78DA8E8155 /* EVRouting */ = {
+			isa = PBXGroup;
+			children = (
+				05EC5798675BC7A77AEFF779 /* EVRoutingService.swift */,
+				7BF5151459D1DCC69C19BBC1 /* MockEVRoutingService.swift */,
+				467C60F7F3CCB9B793DD6BC7 /* RealEVRoutingService.swift */,
+			);
+			path = EVRouting;
 			sourceTree = "<group>";
 		};
 		873DC4867719DFBE7541B2F1 /* Engine */ = {
@@ -90,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				873DC4867719DFBE7541B2F1 /* Engine */,
+				E88727ED6199F8F3D004C3BA /* Services */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -102,6 +164,15 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		E88727ED6199F8F3D004C3BA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				348FD99C1B20293D0A0641D7 /* Distance */,
+				856C0DA92A173F78DA8E8155 /* EVRouting */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		F805EE82976E3111E17DF964 /* SOSSpy */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +180,7 @@
 				6191DBE42312E7484CD755CA /* SOSSpyApp.swift */,
 				C405F5F0283D2D8EACCAE8BC /* Core */,
 				56E317E1CDDC7B650BE534E8 /* Resources */,
+				48793713CC8460AA197D2206 /* UI */,
 				DC10528C10587BC5573BBEC7 /* Views */,
 			);
 			path = SOSSpy;
@@ -216,7 +288,15 @@
 			files = (
 				9B4FA0A2A78954D17FC1302D /* BatterySOSDetector.swift in Sources */,
 				0269E609BDE71271BE8C521C /* ContentView.swift in Sources */,
+				0EF0A95997E9CE75A7949321 /* DistanceFromHomeService.swift in Sources */,
+				FCC2A91C309690D37BD0F3B3 /* EVRoutingService.swift in Sources */,
+				D63549CCC9F467CE782CA123 /* MockDistanceFromHomeService.swift in Sources */,
+				EC0C1AD290D003BC78E65B44 /* MockEVRoutingService.swift in Sources */,
+				0F6DC563E216E3413E5AD5CD /* RealDistanceFromHomeService.swift in Sources */,
+				622B8940FF258E5EC074672E /* RealEVRoutingService.swift in Sources */,
+				148C001E866CBDCAEDA7DE39 /* SOSScreen.swift in Sources */,
 				485E3C039C96D9471018D1CF /* SOSSpyApp.swift in Sources */,
+				F17B4A3B3B08E318FFD31460 /* SOSViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -3,7 +3,7 @@
 
 /// Mock EV routing service with deterministic values
 /// Returns Bargara short route from Test_Locations_and_Scenarios.md
-struct MockEVRoutingService: EVRoutingService {
+struct MockEVRoutingService: EVRoutingService, Sendable {
 
     func calculateRoute(
         from start: (Double, Double),

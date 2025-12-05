@@ -4,7 +4,12 @@ import SwiftUI
 struct SOSSpyApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            SOSScreen(
+                viewModel: SOSViewModel(
+                    routingService: MockEVRoutingService(),
+                    distanceService: MockDistanceFromHomeService()
+                )
+            )
         }
     }
 }

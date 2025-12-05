@@ -3,7 +3,7 @@
 
 /// Mock distance from home service with deterministic values
 /// Returns Bargara test distance from Test_Locations_and_Scenarios.md
-struct MockDistanceFromHomeService: DistanceFromHomeService {
+struct MockDistanceFromHomeService: DistanceFromHomeService, Sendable {
 
     func distanceFromHome(
         current: (Double, Double)

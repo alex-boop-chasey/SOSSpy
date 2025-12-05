@@ -8,7 +8,7 @@ struct RoutePlan {
 }
 
 /// Service for calculating EV routes
-protocol EVRoutingService {
+protocol EVRoutingService: Sendable {
 
     /// Calculate route from start to end coordinates
     /// - Parameters:

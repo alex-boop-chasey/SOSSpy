@@ -2,7 +2,7 @@
 // Protocol for distance from home calculation
 
 /// Service for calculating distance from home location
-protocol DistanceFromHomeService {
+protocol DistanceFromHomeService: Sendable {
 
     /// Calculate distance from current location to home
     /// - Parameter current: Current coordinates (latitude, longitude)
