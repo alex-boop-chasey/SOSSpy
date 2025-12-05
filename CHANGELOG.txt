@@ -1,0 +1,68 @@
+CHANGELOG.txt
+SOSSpy Prototype - Development Log
+
+================================================================================
+2025-12-06T05:14:32+10:00
+[SOSSpy] feat: (Core/Engine) add BatterySOSDetector pure engine
+
+Files created/modified:
+• SOSSpy/Core/Engine/BatterySOSDetector.swift
+
+Summary:
+Created pure function engine for Battery SOS detection. Implements isInSOS()
+with logic: batteryPercent <= 20 AND distanceFromHomeKm > 50. No async, no
+side effects, no OS types - pure deterministic function only.
+
+================================================================================
+2025-12-06T05:19:59+10:00
+[SOSSpy] chore: (Project) add read-only documentation
+
+Files created/modified:
+• read-only-docs/Architecture_in_One_Page.txt
+• read-only-docs/Commit_Message_Playbook.txt
+• read-only-docs/Forbidden_List.txt
+• read-only-docs/masterplan.txt
+• read-only-docs/Mock_Strategy.txt
+• read-only-docs/Naming_and_Conventions.txt
+• read-only-docs/Prototype_Snapshot.txt
+• read-only-docs/Test_Locations_and_Scenarios.txt
+• read-only-docs/todo.txt
+• read-only-docs/XcodeBuildMCP_Recipes.txt
+
+Summary:
+Added complete read-only documentation suite including master plan, architecture
+guidelines, naming conventions, forbidden patterns, test scenarios, and commit
+message format. These docs define the frozen rules for SOSSpy prototype development.
+
+================================================================================
+2025-12-06T05:42:28+10:00
+[SOSSpy] test: (Core/Engine) add deterministic BatterySOSDetector unit tests
+
+Files created/modified:
+• SOSSpyTests/Core/Engine/BatterySOSDetectorTests.swift
+• project.yml (added SOSSpyTests target)
+• SOSSpy.xcodeproj/project.pbxproj (regenerated)
+
+Summary:
+Created 5 deterministic unit tests for BatterySOSDetector using frozen values from
+Test_Locations_and_Scenarios.txt: test_SafeScenario, test_EdgeScenario,
+test_ExactTriggerScenario, test_ClearTriggerScenario, test_HighBatteryScenario.
+All tests passing (5/5). Tests mirror Core/Engine structure exactly.
+
+================================================================================
+2025-12-06T05:56:20+10:00
+[SOSSpy] feat: (Core/Services) scaffold EVRoutingService protocol + Real + Mock
+
+Files created/modified:
+• SOSSpy/Core/Services/EVRouting/EVRoutingService.swift
+• SOSSpy/Core/Services/EVRouting/RealEVRoutingService.swift
+• SOSSpy/Core/Services/EVRouting/MockEVRoutingService.swift
+
+Summary:
+Scaffolded EVRoutingService protocol with calculateRoute() async function and
+RoutePlan struct. RealEVRoutingService has temporary stub implementation
+(Apple Maps integration comes later). MockEVRoutingService returns deterministic
+Bargara short route values (11.4km, 20min). All three files follow protocol +
+Real + Mock pattern from Naming_and_Conventions.txt.
+
+================================================================================
