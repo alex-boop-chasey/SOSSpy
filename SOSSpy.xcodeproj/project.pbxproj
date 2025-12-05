@@ -9,15 +9,30 @@
 /* Begin PBXBuildFile section */
 		0269E609BDE71271BE8C521C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98A14ADF0EA10E6F934744CD /* ContentView.swift */; };
 		485E3C039C96D9471018D1CF /* SOSSpyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6191DBE42312E7484CD755CA /* SOSSpyApp.swift */; };
+		9B4FA0A2A78954D17FC1302D /* BatterySOSDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBE26B77E5D4D1C90B741D9 /* BatterySOSDetector.swift */; };
+		9E5E93C03B62606B23234998 /* BatterySOSDetectorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 939C969A782A73D1E4B6C906 /* BatterySOSDetectorTests.swift */; };
 		FE31E0A2AEFDF579B109B6E8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CF4091F4406DD8C2F30F79C /* Assets.xcassets */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		051DE1515771B57976F47D41 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8586C92C6206D6B426B5CC2C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 128457036F3BC6EB2F153389;
+			remoteInfo = SOSSpy;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		1424EF2098BCA97E12BAB02A /* SOSSpy.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SOSSpy.entitlements; sourceTree = "<group>"; };
 		462D1C01E2E5FEBE0CADD5A4 /* SOSSpy.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = SOSSpy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6191DBE42312E7484CD755CA /* SOSSpyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SOSSpyApp.swift; sourceTree = "<group>"; };
+		939C969A782A73D1E4B6C906 /* BatterySOSDetectorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatterySOSDetectorTests.swift; sourceTree = "<group>"; };
 		98A14ADF0EA10E6F934744CD /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		9CF4091F4406DD8C2F30F79C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		C97F472A6AC29DC647BCAEF4 /* SOSSpyTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = SOSSpyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EBBE26B77E5D4D1C90B741D9 /* BatterySOSDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatterySOSDetector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
@@ -25,8 +40,17 @@
 			isa = PBXGroup;
 			children = (
 				462D1C01E2E5FEBE0CADD5A4 /* SOSSpy.app */,
+				C97F472A6AC29DC647BCAEF4 /* SOSSpyTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		4899BFF2958FA21A81580AC7 /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				939C969A782A73D1E4B6C906 /* BatterySOSDetectorTests.swift */,
+			);
+			path = Engine;
 			sourceTree = "<group>";
 		};
 		56E317E1CDDC7B650BE534E8 /* Resources */ = {
@@ -37,12 +61,37 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		770429A315CEF71EE49D8B06 /* SOSSpyTests */ = {
+			isa = PBXGroup;
+			children = (
+				FF14EE1AA8F984A904DFAFD1 /* Core */,
+			);
+			path = SOSSpyTests;
+			sourceTree = "<group>";
+		};
+		873DC4867719DFBE7541B2F1 /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				EBBE26B77E5D4D1C90B741D9 /* BatterySOSDetector.swift */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
 		BF43DEB1F13053A35A7D027A = {
 			isa = PBXGroup;
 			children = (
 				F805EE82976E3111E17DF964 /* SOSSpy */,
+				770429A315CEF71EE49D8B06 /* SOSSpyTests */,
 				0523717D3DFB14ACB45BA83D /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		C405F5F0283D2D8EACCAE8BC /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				873DC4867719DFBE7541B2F1 /* Engine */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 		DC10528C10587BC5573BBEC7 /* Views */ = {
@@ -58,10 +107,19 @@
 			children = (
 				1424EF2098BCA97E12BAB02A /* SOSSpy.entitlements */,
 				6191DBE42312E7484CD755CA /* SOSSpyApp.swift */,
+				C405F5F0283D2D8EACCAE8BC /* Core */,
 				56E317E1CDDC7B650BE534E8 /* Resources */,
 				DC10528C10587BC5573BBEC7 /* Views */,
 			);
 			path = SOSSpy;
+			sourceTree = "<group>";
+		};
+		FF14EE1AA8F984A904DFAFD1 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				4899BFF2958FA21A81580AC7 /* Engine */,
+			);
+			path = Core;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,6 +142,24 @@
 			productName = SOSSpy;
 			productReference = 462D1C01E2E5FEBE0CADD5A4 /* SOSSpy.app */;
 			productType = "com.apple.product-type.application";
+		};
+		A57D7D7ECEF18C1F875DBB6B /* SOSSpyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 69B1A801A843867B86CB1940 /* Build configuration list for PBXNativeTarget "SOSSpyTests" */;
+			buildPhases = (
+				014A42CE63A3056CC3154C66 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				512E5F821B7AEF2566AAD7B2 /* PBXTargetDependency */,
+			);
+			name = SOSSpyTests;
+			packageProductDependencies = (
+			);
+			productName = SOSSpyTests;
+			productReference = C97F472A6AC29DC647BCAEF4 /* SOSSpyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -109,6 +185,7 @@
 			projectRoot = "";
 			targets = (
 				128457036F3BC6EB2F153389 /* SOSSpy */,
+				A57D7D7ECEF18C1F875DBB6B /* SOSSpyTests */,
 			);
 		};
 /* End PBXProject section */
@@ -125,16 +202,33 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		014A42CE63A3056CC3154C66 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9E5E93C03B62606B23234998 /* BatterySOSDetectorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		2C8F1EAB17E0EB2003189F48 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B4FA0A2A78954D17FC1302D /* BatterySOSDetector.swift in Sources */,
 				0269E609BDE71271BE8C521C /* ContentView.swift in Sources */,
 				485E3C039C96D9471018D1CF /* SOSSpyApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		512E5F821B7AEF2566AAD7B2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 128457036F3BC6EB2F153389 /* SOSSpy */;
+			targetProxy = 051DE1515771B57976F47D41 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		0D4E9C816DA190F5E44D50F8 /* Release */ = {
@@ -192,6 +286,42 @@
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
+		};
+		15E68DAFF551CA1FFB346A55 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chargetimer.prototype.SOSSpyTests;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SOSSpy.app/SOSSpy";
+			};
+			name = Release;
+		};
+		2BB3FB2C90CBA235C19CAA54 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.chargetimer.prototype.SOSSpyTests;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 6.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SOSSpy.app/SOSSpy";
+			};
+			name = Debug;
 		};
 		9CBDE471EB6828A44B9D4690 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -320,6 +450,15 @@
 			buildConfigurations = (
 				9CBDE471EB6828A44B9D4690 /* Debug */,
 				0D4E9C816DA190F5E44D50F8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		69B1A801A843867B86CB1940 /* Build configuration list for PBXNativeTarget "SOSSpyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2BB3FB2C90CBA235C19CAA54 /* Debug */,
+				15E68DAFF551CA1FFB346A55 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
