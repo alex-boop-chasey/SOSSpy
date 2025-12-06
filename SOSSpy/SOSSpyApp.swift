@@ -6,7 +6,7 @@ struct SOSSpyApp: App {
         WindowGroup {
             SOSScreen(
                 viewModel: SOSViewModel(
-                    routingService: MockEVRoutingService(),
+                    routingService: RealEVRoutingService(),
                     distanceService: MockDistanceFromHomeService()
                 )
             )
