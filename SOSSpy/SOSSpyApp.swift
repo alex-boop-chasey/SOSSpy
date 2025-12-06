@@ -7,7 +7,7 @@ struct SOSSpyApp: App {
             SOSScreen(
                 viewModel: SOSViewModel(
                     routingService: RealEVRoutingService(),
-                    distanceService: MockDistanceFromHomeService()
+                    distanceService: RealDistanceFromHomeService()
                 )
             )
         }
