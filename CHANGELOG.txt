@@ -171,3 +171,17 @@ to frozen Bundaberg home coordinates. Combined with RealEVRoutingService, the
 app now has full real service integration for SOS detection demo.
 
 ================================================================================
+2025-12-07T09:00:00+10:00
+[SOSSpy] feat: (Core/Services) implement real distance-from-home calculation
+
+Files created/modified:
+• SOSSpy/Core/Services/Distance/RealDistanceFromHomeService.swift
+
+Summary:
+Implemented haversine formula for real distance calculation in
+RealDistanceFromHomeService. Uses frozen Bundaberg home coordinates
+(-24.8658, 152.3489) and calculates great-circle distance to current location.
+Pure math implementation using Foundation only - no CoreLocation dependency.
+Earth radius: 6371 km.
+
+================================================================================
