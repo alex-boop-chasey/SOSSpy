@@ -125,3 +125,23 @@ when routePlan is available. Screen now calls both updateState() and loadRoutePr
 in .task. Uses mock routing service only - no Apple Maps integration yet.
 
 ================================================================================
+2025-12-06T06:52:00+10:00
+[SOSSpy] feat: (App) set SOSScreen as application entry point using mock services
+
+Files created/modified:
+• SOSSpy/SOSSpyApp.swift
+• SOSSpy/UI/ViewModels/SOSViewModel.swift
+• SOSSpy/Core/Services/EVRouting/EVRoutingService.swift
+• SOSSpy/Core/Services/EVRouting/MockEVRoutingService.swift
+• SOSSpy/Core/Services/Distance/DistanceFromHomeService.swift
+• SOSSpy/Core/Services/Distance/MockDistanceFromHomeService.swift
+• SOSSpy.xcodeproj/project.pbxproj (regenerated)
+
+Summary:
+Replaced ContentView with SOSScreen as app entry point, injecting MockEVRoutingService
+and MockDistanceFromHomeService. Made SOSViewModel @Observable @MainActor final class
+for Swift concurrency compliance. Added Sendable conformance to all service protocols
+and mock implementations to fix data race warnings. App now launches directly to SOS
+screen with live mock data showing battery status, distance from home, and route preview.
+
+================================================================================
