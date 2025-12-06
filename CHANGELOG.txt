@@ -158,3 +158,16 @@ location to Bargara destination. Still using MockDistanceFromHomeService for
 distance calculation. Successfully built and tested on iPhone 17 Pro simulator.
 
 ================================================================================
+2025-12-07T08:45:00+10:00
+[SOSSpy] feat: (UI/Screens) use RealDistanceFromHomeService for demo run
+
+Files created/modified:
+• SOSSpy/SOSSpyApp.swift
+
+Summary:
+Switched from MockDistanceFromHomeService to RealDistanceFromHomeService in
+SOSSpyApp.swift. App now uses real distance calculation from current location
+to frozen Bundaberg home coordinates. Combined with RealEVRoutingService, the
+app now has full real service integration for SOS detection demo.
+
+================================================================================
