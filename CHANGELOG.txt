@@ -145,3 +145,16 @@ and mock implementations to fix data race warnings. App now launches directly to
 screen with live mock data showing battery status, distance from home, and route preview.
 
 ================================================================================
+2025-12-07T08:30:00+10:00
+[SOSSpy] feat: (App) inject RealEVRoutingService for demo
+
+Files created/modified:
+• SOSSpy/SOSSpyApp.swift
+
+Summary:
+Switched from MockEVRoutingService to RealEVRoutingService in SOSSpyApp.swift.
+App now uses real Apple Maps MKDirections for route calculation from current
+location to Bargara destination. Still using MockDistanceFromHomeService for
+distance calculation. Successfully built and tested on iPhone 17 Pro simulator.
+
+================================================================================
